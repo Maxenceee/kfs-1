@@ -1,4 +1,6 @@
 .objs/
+
+iso_root/
 *.bin
 *.o
 *.elf
