@@ -16,6 +16,11 @@ _start:
 	; Call Kernel main function
 	call kmain
 
+; Keeping Kernel aliva!
+hang:
+	hlt
+	jmp hang
+
 section .bss
 resb 8192                   ; Réserve 8 Ko pour la pile
 stack_space:

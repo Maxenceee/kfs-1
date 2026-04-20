@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   screen.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgama <mgama@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:26:25 by mgama             #+#    #+#             */
-/*   Updated: 2026/04/20 16:39:37 by mgama            ###   ########.fr       */
+/*   Updated: 2026/04/20 18:07:59 by mgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef SCREEN_H
+#define SCREEN_H
 
 #include <types.h>
 
@@ -54,7 +54,17 @@
 #define VGA_BACK_LIGHT_BROWN	(VGA_FORE_LIGHT_BROWN << 4)
 #define VGA_BACK_WHITE			(VGA_FORE_WHITE << 4)
 
+void	init_screen(void);
 void	print_screen(const char *s, uint8_t attrib);
-void	clear_screen(uint8_t attrib);
+void	print_dscreen(const char *s, uint8_t attrib, int delay);
+void	clear_screen(void);
+void	scroll_screen(void);
 
-#endif /* PRINT_H */
+void		enable_cursor(uint8_t cursor_start, uint8_t cursor_end);
+void		move_cursor(uint16_t pos);
+void		disable_cursor(void);
+void		enable_cursor_blinking(void);
+void		set_cursor_shape(uint8_t cursor_start, uint8_t cursor_end);
+uint16_t	get_cursor_position(void);
+
+#endif /* SCREEN_H */

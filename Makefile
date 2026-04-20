@@ -18,7 +18,9 @@ RM              =   rm -rf
 
 CFLAGS          =   -m32 -fno-builtin -fno-stack-protector \
                     -nostdlib -nodefaultlibs -ffreestanding \
-                    -fno-pie -Wall -Wextra -Werror -I$(INCLUDES_DIR)
+                    -fno-pie -Wall \
+					-I $(INCLUDES_DIR)
+# 					-Wextra -Werror 
 
 ASMFLAGS        =   -f elf32
 LDFLAGS         =   -m32 -T linker.ld -nostdlib -nodefaultlibs -no-pie
@@ -69,6 +71,9 @@ clean:
 fclean: clean
 	@echo "$(RED)Cleaning $(NAME)$(DEFAULT)"
 	@$(RM) $(NAME) $(ISO_NAME)
+
+run:
+	qemu-system-i386 -kernel $(NAME) -icount shift=2 -vga std
 
 re: fclean all
 
