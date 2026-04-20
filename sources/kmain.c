@@ -6,7 +6,7 @@
 /*   By: mgama <mgama@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:23:35 by mgama             #+#    #+#             */
-/*   Updated: 2026/04/20 18:25:02 by mgama            ###   ########.fr       */
+/*   Updated: 2026/04/20 18:27:03 by mgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ kmain()
 	clear_screen();
 	enable_cursor(14, 15);
 	
-	const char* msg = "Hello, Kernel World!\n\nThis is my simple kernel, for the KFS 42 school project.\n";
+	const char* msg = "Hello, Kernel World!\n\nThis is my simple kernel, for the KFS 42 school project.";
 
 	ksleep(500);
 	print_dscreen(msg, VGA_FORE_WHITE | VGA_BACK_BLACK, 10);
