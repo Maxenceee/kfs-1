@@ -3,6 +3,7 @@ global ksleep
 
 ;
 ; Since for now we don't have a timer interrupt, we will use a simple busy-wait loop for ksleep.
+; The PIT requires that a GDT is defined.
 ;
 
 ; void ksleep(uint32_t duration)

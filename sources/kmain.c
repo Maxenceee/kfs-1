@@ -6,7 +6,7 @@
 /*   By: mgama <mgama@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:23:35 by mgama             #+#    #+#             */
-/*   Updated: 2026/04/20 18:27:03 by mgama            ###   ########.fr       */
+/*   Updated: 2026/04/21 11:19:34 by mgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ print_logo()
     "                         | |_| | (_| | | | |  __/ (_) | \n"
     "                          \\____|\\__,_|_|_|_|\\___|\\___/  \n"
     "                                                       \n"
-    "                                Kernel Project           ";
+    "                            Kernel Project by mgama\n";
 
     print_screen(logo, VGA_FORE_CYAN | VGA_BACK_BLACK);
 }
 
 int
-kmain()
+kmain(void)
 {
 	init_screen();
 
