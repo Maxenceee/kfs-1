@@ -61,7 +61,7 @@ $(ISO_NAME): $(NAME)
 	@mkdir -p $(ISO_DIR)/boot/grub
 	@cp $(NAME) $(ISO_DIR)/boot/
 	@echo "$$GRUB_CONFIG" > $(ISO_DIR)/boot/grub/grub.cfg
-	@grub-mkrescue -o $(ISO_NAME) $(ISO_DIR)
+	@grub-mkrescue -o $(ISO_NAME) $(ISO_DIR) 
 	@echo "$(GREEN)$(ISO_NAME) is ready!$(DEFAULT)"
 
 clean:
@@ -72,8 +72,11 @@ fclean: clean
 	@echo "$(RED)Cleaning $(NAME)$(DEFAULT)"
 	@$(RM) $(NAME) $(ISO_NAME)
 
-run:
+run-kernel: $(ISO_NAME)
 	qemu-system-i386 -kernel $(NAME) -icount shift=2 -vga std
+
+run-iso: $(ISO_NAME)
+	qemu-system-i386 -cdrom $(ISO_NAME) -icount shift=2 -vga std
 
 re: fclean all
 
