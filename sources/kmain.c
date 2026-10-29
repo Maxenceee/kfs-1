@@ -6,7 +6,7 @@
 /*   By: mgama <mgama@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:23:35 by mgama             #+#    #+#             */
-/*   Updated: 2026/04/21 11:19:34 by mgama            ###   ########.fr       */
+/*   Updated: 2026/10/29 17:25:07 by mgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ kmain(void)
 	ksleep(3000);
 	clear_screen();
 
-	print_dscreen("42", VGA_FORE_WHITE | VGA_BACK_BLACK, 10);
+	print_dscreen("42", VGA_FORE_GREEN | VGA_BACK_BLACK, 10);
 
 	return (0);
 }
