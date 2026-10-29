@@ -16,7 +16,7 @@ _start:
 	; Call Kernel main function
 	call kmain
 
-; Keeping Kernel aliva!
+; Keeping Kernel alive!
 hang:
 	hlt
 	jmp hang
